@@ -32,14 +32,14 @@ def get_from_list(path, limit=None):
 
     with open(path, 'r') as raw:
         if limit is None:
-            return raw.readlines()
+            return [item.rstrip('\n') for item in  raw.readlines()]
         else:
             i = 0
             result = []
             with open(path, 'r') as raw:
                 while i < limit:
                     i = i + 1
-                    result.append(raw.readline())
+                    result.append(raw.readline().rstrip())
             return result
 
 
@@ -51,9 +51,14 @@ def flush_to_local_file(result_, file):
     result = []
 
 def shuffled_ints(min=0, max=20):
-    l = range(min, max)
-    random.shuffle(l)
-    return l
+    _list = range(min, max)
+    random.shuffle(_list)
+    return [str(item) for item in _list]
+
+def shuffled_decs(min=0.1, max=100.2):
+    _list = range(min, max)
+    random.shuffle(_list)
+    return [str(item) for item in _list]
 
 def alphabet(shuffled=False):
     pass

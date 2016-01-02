@@ -5,9 +5,16 @@ if __name__ == "__main__":
     ln = get_from_list("lists/lastnames.txt", 3)
 
     mixer = Mixer()
+
     mixer.set_delimiter('|')
+
     mixer.add_column(fn)
     mixer.add_column(ln)
-    mixer.add_column(shuffled_ints(1,5))
-    print mixer.mix(number_of_records=100, with_incremental_id=False)
+
+    mixer.add_column(shuffled_ints(1, 5))
+
+    print mixer.mix()
+
+
+    mixer.add_record("")
 

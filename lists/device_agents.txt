@@ -1,0 +1,7 @@
+iOS/Safari
+Android/Browser
+Internet Explorer 6.0
+Blackberry
+iOS 8.2
+SymbianOS
+NokiaN97i
